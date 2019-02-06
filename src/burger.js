@@ -26,14 +26,5 @@ class Burger extends React.Component {
 }
 
 
-class Ingredient extends React.Component {
-
-
-    render() {
-
-        return <div className="Salad"></div>
-
-    }
-}
 
 export default Burger

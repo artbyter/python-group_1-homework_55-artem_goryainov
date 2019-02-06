@@ -7,33 +7,37 @@ import Burger from './burger'
 class App extends Component {
 
 
-    names = ['Salad', 'Cheese', 'Meat', 'Bacon']
+    names = ['Salad', 'Cheese', 'Meat', 'Bacon'];
+    prices = [5, 20, 50, 30];
+
     state = {
         ingredients: {
-            'Salad': {count: 1, total: 0},
-            'Cheese': {count: 2, total: 0},
-            'Meat': {count: 2, total: 0},
-            'Bacon': {count: 1, total: 0},
-        }
-    }
-
-    AddIngredient = (name) => {
-        let ingredient = {...this.state.ingredients[name]};
-        let ingredients = {...this.state.ingredients};
-        ingredient.count += 1
-        ingredients[name] = ingredient;
-        let state = {...this.state};
-        state.ingredients = ingredients;
-        this.setState(state);
+            [this.names[0]]: {count: 0, total: 0},
+            [this.names[1]]: {count: 0, total: 0},
+            [this.names[2]]: {count: 0, total: 0},
+            [this.names[3]]: {count: 0, total: 0},
+        },
+        total: 20,
     };
 
-    RemoveIngredient = (name) => {
+    ChangeIngredient = (name, operation) => {
         let ingredient = {...this.state.ingredients[name]};
         let ingredients = {...this.state.ingredients};
-        ingredient.count -= 1
+        let price = this.prices[this.names.indexOf(name)];
+        let total = this.state.total;
+        if (operation === '+') {
+            ++ingredient.count;
+            ingredient.total += price;
+            total += price;
+        } else {
+            --ingredient.count;
+            ingredient.total -= price;
+            total -= price;
+        }
         ingredients[name] = ingredient;
         let state = {...this.state};
         state.ingredients = ingredients;
+        state.total = total;
         this.setState(state);
     };
 
@@ -44,8 +48,9 @@ class App extends Component {
                 <Burger names={this.names} ingredients={this.state.ingredients}/>
 
 
-                <BurgerForm ingredients={this.state.ingredients} names={this.names} functionAdd={this.AddIngredient}
-                            functionRemove={this.RemoveIngredient}/>
+                <BurgerForm ingredients={this.state.ingredients} names={this.names} total={this.state.total}
+                            function={this.ChangeIngredient}
+                />
             </div>
         );
     }
