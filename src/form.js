@@ -23,10 +23,10 @@ class BurgerForm extends React.Component {
 class BurgerFormLine extends React.Component {
     render() {
         return (
-            <div className="form-group  text-center m-3 p-3">
+            <div className="form-group  text-center m-3 p-3 ">
                 <div className="container">
                     <div className="row">
-                        <label className=' float-left col-2'>{this.props.ingredientName}</label>
+                        <label className=' col-2'>{this.props.ingredientName}</label>
                         <div className='d-inline-block col-7'>
                             <button disabled={this.props.isDisabled} className="btn lessButton mx-2"
                                     onClick={() => this.props.func(this.props.ingredientName, '-')}>Less
@@ -35,7 +35,7 @@ class BurgerFormLine extends React.Component {
                                     onClick={() => this.props.func(this.props.ingredientName, '+')}>More
                             </button>
                         </div>
-                        <p className='d-inline-block float-right col-3'>Price: {this.props.price}</p>
+                        <p className='d-inline-block col-3'>Price: {this.props.price}</p>
                     </div>
                 </div>
             </div>

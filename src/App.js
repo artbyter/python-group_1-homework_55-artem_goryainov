@@ -8,19 +8,12 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.names = ['Salad', 'Cheese', 'Meat', 'Bacon','Pickles','Chicken'];
-        this.prices = [5, 20, 50, 30,10,40];
-        let ingreds={}
-
+        this.names = ['Salad', 'Cheese', 'Meat', 'Bacon', 'Pickles', 'Chicken'];
+        this.prices = [5, 20, 50, 30, 10, 40];
+        let ingreds = {}
+        this.names.forEach(item => ingreds[item] = {count: 0, total: 0})
         this.state = {
-            ingredients: {
-                [this.names[0]]: {count: 0, total: 0},
-                [this.names[1]]: {count: 0, total: 0},
-                [this.names[2]]: {count: 0, total: 0},
-                [this.names[3]]: {count: 0, total: 0},
-                [this.names[4]]: {count: 0, total: 0},
-                [this.names[5]]: {count: 0, total: 0},
-            },
+            ingredients: ingreds,
             total: 20,
         };
     }
