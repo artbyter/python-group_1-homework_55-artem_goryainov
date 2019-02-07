@@ -1,0 +1,20 @@
+.burger_form {
+    background-color: #bc581e;
+}
+
+.lessButton {
+    background-color: #F08E4A;
+    width: 80px;
+    border: 1px solid #7f3608
+}
+
+.moreButton {
+    background-color: #7f3608;
+    border: 1px solid #F08E4A;
+    width: 80px;
+}
+
+.lessButton[disabled] {
+    background-color: #c9c9c9;
+    border: 1px solid black;
+}

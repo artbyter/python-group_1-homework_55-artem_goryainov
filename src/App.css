@@ -121,6 +121,14 @@
     border-radius: 15px;
 }
 
+.Chicken {
+    width: 80%;
+    height: 6%;
+    background: linear-gradient(rgba(217, 164, 42, 0.57), rgba(191, 76, 5, 0.53));
+    margin: 2% auto;
+    border-radius: 15px;
+}
+
 .Cheese {
     width: 90%;
     height: 4.5%;
@@ -128,6 +136,8 @@
     background: linear-gradient(#f4d004, #d6bb22);
     border-radius: 20px;
 }
+
+
 
 .Salad {
     width: 85%;
@@ -141,6 +151,13 @@
     width: 80%;
     height: 3%;
     background: linear-gradient(#bf3813, #c45e38);
+    margin: 2% auto;
+}
+
+.Pickles {
+    width: 80%;
+    height: 3%;
+    background: linear-gradient(rgba(46, 95, 22, 0.78), rgba(37, 164, 0, 0.52));
     margin: 2% auto;
 }
 

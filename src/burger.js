@@ -13,7 +13,7 @@ class Burger extends React.Component {
                     let finString = [];
                     for (let i = 0; i < this.props.ingredients[name].count; i++) {
 
-                        finString.push(<div key={name + i} className={name}></div>)
+                        finString.push(<Ingredient name={name} key={i}/>)
                     }
                     return finString
                 })}
@@ -25,6 +25,10 @@ class Burger extends React.Component {
 
 }
 
-
+class Ingredient extends React.Component {
+    render() {
+        return <div  className={this.props.name}></div>
+    }
+}
 
 export default Burger
